@@ -1,62 +1,30 @@
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
--- Map Leader
-vim.cmd "nnoremap <SPACE> <Nop>"
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
--- Clear search highlighting
-map('n', '<Esc>', ':nohl<CR>')
-
--- Move around splits using Ctrl + {h,j,k,l}
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-l>', '<C-w>l')
-
--- Save file
-map('n', '<leader>s', ':w<CR>')
-
--- Nvim Tree
-map('n', '<leader>e', ':NvimTreeToggle<CR>') -- Toggle Open/Close
-
--- Bufferline
-map('n', '<S-l>', ':BufferLineCycleNext<CR>')
-map('n', '<S-h>', ':BufferLineCyclePrev<CR>')
-
--- Telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
--- vim.cmd [[
---   noremap gc :lua vim.lsp.buf.code_action()<CR>
---   noremap gt :lua vim.lsp.buf.type_definition()<CR>
---   noremap gf :lua vim.lsp.buf.format()<CR>
--- ]]
-
-local LSP_Keymaps = {
-  declaration = "gD",
-  definition = "gk",
-  hover = "K",
-  implementation = "gi",
-  signature_help = "<C-k>",
-  add_workspace_folder = "<leader>wa",
-  remove_workspace_folder = "<leader>wr",
-  list_workspace_folders = "<leader>wl",
-  type_definition = "<leader>d",
-  rename = "gn",
-  code_action = "gd",
-  references = "gr",
-  format = "gf"
+return {
+  leader = " ",
+  clear_search_highlighting = "<Esc>",
+  move_to_left_window = "<C-h>",
+  move_to_down_window = "<C-j>",
+  move_to_up_window = "<C-k>",
+  move_to_right_window = "<C-l>",
+  save_file = "<leader>s",
+  open_explorer = "<leader>e",
+  next_buffer = "<S-l>",
+  previous_buffer = "<S-h>",
+  telescope_find_files = "<leader>ff",
+  telescope_live_grep = "<leader>fg",
+  telescope_buffers = "<leader>fb",
+  telescope_help_tags = "<leader>fh",
+  lsp_declaration = "gD",
+  lsp_definition = "gk",
+  lsp_hover = "K",
+  lsp_implementation = "gi",
+  lsp_signature_help = "<C-k>",
+  lsp_add_workspace_folder = "<leader>wa",
+  lsp_remove_workspace_folder = "<leader>wr",
+  lsp_list_workspace_folders = "<leader>wl",
+  lsp_type_definition = "<leader>d",
+  lsp_rename = "gn",
+  lsp_code_action = "gd",
+  lsp_references = "gr",
+  lsp_format = "gf"
 }
 
-return LSP_Keymaps
