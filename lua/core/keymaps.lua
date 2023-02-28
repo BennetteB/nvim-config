@@ -25,6 +25,8 @@ return {
   lsp_rename = "gn",
   lsp_code_action = "gd",
   lsp_references = "gr",
-  lsp_format = "gf"
+  lsp_format = "gf",
+  trouble_toggle = "<leader>tt",
+  trouble_quick_fix = "<leader>tq",
 }
 

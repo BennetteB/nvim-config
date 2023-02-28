@@ -52,3 +52,9 @@ vim.keymap.set('n',keymaps.telescope_find_files, builtin.find_files, {})
 vim.keymap.set('n',keymaps.telescope_live_grep, builtin.live_grep, {})
 vim.keymap.set('n',keymaps.telescope_buffers, builtin.buffers, {})
 vim.keymap.set('n',keymaps.telescope_help_tags, builtin.help_tags, {})
+
+-- Trouble
+map("n", keymaps.trouble_toggle, ':TroubleToggle<CR>')
+map("n", keymaps.trouble_quick_fix, ':TroubleToggle quickfix<CR>')
+
+

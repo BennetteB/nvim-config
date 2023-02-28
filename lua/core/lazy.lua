@@ -49,5 +49,6 @@ require("lazy").setup({
   "tpope/vim-surround",
 
   "folke/trouble.nvim",
+  "nvim-treesitter/nvim-treesitter",
 
 })
