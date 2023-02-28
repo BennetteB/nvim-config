@@ -9,6 +9,7 @@ return {
   open_explorer = "<leader>e",
   next_buffer = "<S-l>",
   previous_buffer = "<S-h>",
+  close_buffer = "<S-r>",
   telescope_find_files = "<leader>ff",
   telescope_live_grep = "<leader>fg",
   telescope_buffers = "<leader>fb",
@@ -28,5 +29,7 @@ return {
   lsp_format = "gf",
   trouble_toggle = "<leader>tt",
   trouble_quick_fix = "<leader>tq",
+  visual_move_text_down = "J",
+  visual_move_text_up = "K",
 }
 

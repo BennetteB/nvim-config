@@ -45,6 +45,7 @@ map('n', keymaps.open_explorer, ':NvimTreeToggle<CR>') -- Toggle Open/Close
 -- Bufferline
 map('n', keymaps.next_buffer, ':BufferLineCycleNext<CR>')
 map('n',keymaps.previous_buffer, ':BufferLineCyclePrev<CR>')
+map('n',keymaps.close_buffer, ':bdelete<CR>')
 
 -- Telescope
 local builtin = require('telescope.builtin')
@@ -57,4 +58,22 @@ vim.keymap.set('n',keymaps.telescope_help_tags, builtin.help_tags, {})
 map("n", keymaps.trouble_toggle, ':TroubleToggle<CR>')
 map("n", keymaps.trouble_quick_fix, ':TroubleToggle quickfix<CR>')
 
+-- ToggleTerm
+vim.cmd [[ 
+  autocmd TermEnter term://*toggleterm#*
+        \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 
+  nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+  inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+]]
+
+-- Move text up and down
+map("x", keymaps.visual_move_text_up, ":move '>+1<CR>gv-gv")
+map("x", keymaps.visual_move_text_down, ":move '<-2<CR>gv-gv")
+
+-- Terminal --
+-- Better terminal navigation
+map("t", "<C-h>", "<C-\\><C-N><C-w>h")
+map("t", "<C-j>", "<C-\\><C-N><C-w>j")
+map("t", "<C-k>", "<C-\\><C-N><C-w>k")
+map("t", "<C-l>", "<C-\\><C-N><C-w>l")
