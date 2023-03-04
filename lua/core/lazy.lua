@@ -51,6 +51,8 @@ require("lazy").setup({
   "folke/trouble.nvim",
   "nvim-treesitter/nvim-treesitter",
   'nvim-lualine/lualine.nvim',
-  {'akinsho/toggleterm.nvim', version = "*", config = true}
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
+  'numToStr/Comment.nvim',
+
 
 })
