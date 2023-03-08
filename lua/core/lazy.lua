@@ -53,6 +53,7 @@ require("lazy").setup({
   'nvim-lualine/lualine.nvim',
   {'akinsho/toggleterm.nvim', version = "*", config = true},
   'numToStr/Comment.nvim',
+  'windwp/nvim-ts-autotag',
 
 
 })
