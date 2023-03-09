@@ -1,5 +1,6 @@
 return {
   leader = " ",
+  escape = "jk",
   clear_search_highlighting = "<Esc>",
   move_to_left_window = "<C-h>",
   move_to_down_window = "<C-j>",

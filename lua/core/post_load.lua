@@ -27,6 +27,9 @@ end
 -- Map Leader
 vim.g.mapleader = keymaps.leader
 
+-- Alternative for escape
+map('i', keymaps.escape, '<Esc>')
+
 -- Clear search highlighting
 map('n', keymaps.clear_search_highlighting , ':nohl<CR>')
 
